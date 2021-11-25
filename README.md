@@ -1,5 +1,5 @@
 # PRiR-Homework_MPI_4
-## Zadanie 1 - approximation of the value of PI
+## Zadanie 1 - approximation of the value of PI in MPI
 1. Initializing the MPI environment; creating a network of processors with the size passed by the ```-np``` parameter
 2. The number of processors making up the network
 3. Unique number of the current process
@@ -43,6 +43,13 @@
 ```
 ### Result
 ![z1-1-1](https://user-images.githubusercontent.com/72127610/142828394-891e472d-f10f-46c9-8b44-d55ffd3d2c31.png)
+## Zadanie 2 - Trapezoidal and Rectangle method in MPI
 
+### Result
+Compare Java and MPI results
+#### Java:
+![image](https://user-images.githubusercontent.com/72127610/143480647-d8b13c5f-c39b-45cb-b59e-feefdd856e34.png)
+#### MPI:
+![z2_n](https://user-images.githubusercontent.com/72127610/143480979-65e65d66-499b-4082-abf2-9cd77b1b3163.jpg)
 
 
