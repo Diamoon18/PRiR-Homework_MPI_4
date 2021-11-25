@@ -44,6 +44,34 @@
 ### Result
 ![z1-1-1](https://user-images.githubusercontent.com/72127610/142828394-891e472d-f10f-46c9-8b44-d55ffd3d2c31.png)
 ## Zadanie 2 - Trapezoidal and Rectangle method in MPI
+### Auxiliary functions
+```funkcja(double x)``` - returns the value of the integer function
+```c
+  double funkcja(double x){
+      return pow(x, 2);
+  }
+```
+```double mProstokaty(double a, int numer_proc, double h)``` - counts the area of the rectangle depending on process number
+```c
+  double mProstokaty(double a, int numer_proc, double h){
+    double result = 0;
+    result = funkcja(a+numer_proc*h);
+    return result;
+  }
+```
+```double mTrapezy(double a, int numer_proc, double h, int size_n)``` - counts the area of the trapezoid depending on the process number
+```c
+  double mTrapezy(double a, int numer_proc, double h, int size_n){
+      double result = 0;
+      if(numer_proc == 0 || numer_proc == size_n) {
+          result = funkcja(a+numer_proc*h)/2;
+      } else {
+          result = funkcja(a+numer_proc*h);
+      }
+      return result;
+  }
+```
+### Main
 1. Initializing the MPI environment; creating a network of processors with the size passed by the ```-np``` parameter
 2. The number of processors making up the network
 3. Unique number of the current process
@@ -78,7 +106,7 @@
   ...
 ```
 7. Get the result from the process greater by 1
-8. Counting fields and add to ````result```
+8. Counting fields and add to ```result```
 9. Until we get to the end(in this case, to process zero), we send ```result``` to the previous process
 10. Finish work in MPI 
 ```c
