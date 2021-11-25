@@ -45,7 +45,7 @@
 ![z1-1-1](https://user-images.githubusercontent.com/72127610/142828394-891e472d-f10f-46c9-8b44-d55ffd3d2c31.png)
 ## Zadanie 2 - Trapezoidal and Rectangle method in MPI
 ### Auxiliary functions
-```funkcja(double x)``` - returns the value of the integer function
+```funkcja(double x)``` - returns the value of the integral function
 ```c
   double funkcja(double x){
       return pow(x, 2);
